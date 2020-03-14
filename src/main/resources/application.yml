@@ -1,0 +1,16 @@
+server:
+  port: 80
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: method_route
+          uri: http://127.0.0.1:8080/v1/verifyPassword
+          predicates:
+            - Path=/**,/**
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
